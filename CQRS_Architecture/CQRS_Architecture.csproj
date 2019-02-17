@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookEntryCommand.cs" />
+    <Compile Include="BookEntryHandler.cs" />
+    <Compile Include="BookSelectHandler.cs" />
+    <Compile Include="BookSelectQuery.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

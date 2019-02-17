@@ -5,13 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CQRS_Architecture {
-  class Program {
-    static void Main(string[] args) {
-      var db = new DataBase.DBConnection();
+    class Program {
+        static void Main(string[] args) {
+            //var bookEntry = new BookEntryHandler();
+            //bookEntry.Execute(new BookEntryCommand("Harry Potter", "J.K. Rowling"));
 
-      var dt = db.TestDB();
+            var bookSelect = new BookSelectHandler();
+            var dt = bookSelect.Execute(new BookSelectQuery() { Title = "Harry Potter " });
 
-      Console.ReadKey();
+            Console.ReadKey();
+        }
     }
-  }
 }

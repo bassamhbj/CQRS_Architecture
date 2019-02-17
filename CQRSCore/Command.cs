@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CQRSCore {
-    public class Query {
+    public class Command {
         #region Properties
         #endregion
 
         #region Constructors
-        public Query() {
+        public Command() {
 
         }
         #endregion

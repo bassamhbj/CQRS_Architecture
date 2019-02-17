@@ -5,14 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CQRSCore {
-    public class Query {
+    public class Event {
         #region Properties
         #endregion
 
-        #region Constructors
-        public Query() {
-
-        }
+        #region Constructor
         #endregion
 
         #region Public Methods

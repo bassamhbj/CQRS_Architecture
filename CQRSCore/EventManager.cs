@@ -5,30 +5,40 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CQRSCore {
-  public class EventManager {
-    #region Properties
-    private static EventManager _instance;
-    #endregion
+    public class EventManager {
+        #region Properties
+        private static EventManager _instance;
 
-    #region Constructors
-    private EventManager() {
+        public List<Event> EventRecord { get; set; }
+        public event EventHandler<Command> CommandEvent;
+        public event EventHandler<Query> QueryEvent;
+        #endregion
 
-    }
-
-    public static EventManager Instance {
-      get {
-        if(_instance == null) {
-          _instance = new EventManager();
+        #region Constructors
+        private EventManager() {
+            EventRecord = new List<Event>();
         }
-        return _instance;
-      }
+
+        public static EventManager Instance {
+            get {
+                if (_instance == null) {
+                    _instance = new EventManager();
+                }
+                return _instance;
+            }
+        }
+        #endregion
+
+        #region Public Methods
+        public void OnCommand(Command command) {
+            CommandEvent?.Invoke(this, command);
+        }
+        public void OnQuery(Query query) {
+            QueryEvent?.Invoke(this, query);
+        }
+        #endregion
+
+        #region Private Methods
+        #endregion
     }
-    #endregion
-
-    #region Public Methods
-    #endregion
-
-    #region Private Methods
-    #endregion
-  }
 }
